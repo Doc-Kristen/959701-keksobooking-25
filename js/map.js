@@ -59,7 +59,7 @@ const createMarker = (location, popupContent) => {
 
 // Отрисовка маркеров и объявлений
 
-const renderListings = (listings) => {
+const renderBaloons = (listings) => {
   listings.forEach((offer) => {
     createMarker(offer.location, createOfferTemplate(offer));
   });
@@ -80,7 +80,7 @@ const resetMapSettings = () => {
   map.closePopup().setView(DEFAULT_LOCATION, 12);
   filterElement.reset();
   receiveData((data) => {
-    renderListings(data.slice(0, QUANTITY_OFFERS));
+    renderBaloons(data.slice(0, QUANTITY_OFFERS));
   });
 
 };
@@ -90,4 +90,4 @@ resetButton.addEventListener('click', () => {
 });
 
 
-export { createMarker, map, mainPinMarker, resetMapSettings, removeMapPin, renderListings };
+export { createMarker, map, mainPinMarker, resetMapSettings, removeMapPin, renderBaloons };

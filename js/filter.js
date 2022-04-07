@@ -1,5 +1,5 @@
 import { receiveData } from './api.js';
-import { removeMapPin, renderListings } from './map.js';
+import { removeMapPin, renderBaloons } from './map.js';
 import { QUANTITY_OFFERS } from './data.js';
 import { debounce } from './util.js';
 
@@ -51,8 +51,8 @@ const filterOffers = (data) => {
 filterElement.addEventListener('change', () => {
   receiveData((data) => {
     removeMapPin();
-    const offers = data.slice();
-    debounce(renderListings(filterOffers(offers.slice(0, QUANTITY_OFFERS)), RERENDER_DELAY));
+    const offers = data.slice(0, QUANTITY_OFFERS);
+    debounce(renderBaloons(filterOffers(offers), RERENDER_DELAY));
   });
 });
 

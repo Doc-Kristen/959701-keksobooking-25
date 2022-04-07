@@ -2,10 +2,9 @@ import './slider.js';
 import './user-form.js';
 import './filter.js';
 import { QUANTITY_OFFERS } from './data.js';
-import { renderListings } from './map.js';
+import { renderBaloons } from './map.js';
 import { receiveData } from './api.js';
 
 receiveData((data) => {
-  renderListings(data.slice(0, QUANTITY_OFFERS));
+  renderBaloons(data.slice(0, QUANTITY_OFFERS));
 });
-
