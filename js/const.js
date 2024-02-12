@@ -2,7 +2,7 @@
 
 const QUANTITY_OFFERS = 10;
 
-const SERVER = 'https://25.javascript.pages.academy/keksobooking';
+const SERVER = 'https://30.javascript.htmlacademy.pro/keksobooking';
 
 const DATA_URL = `${SERVER}/data`;
 
